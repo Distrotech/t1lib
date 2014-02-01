@@ -57,7 +57,7 @@ no_x            = @no_x@
 # targets to build 
 
 
-all: t1lib_doc.ps
+all: #t1lib_doc.ps
 
 
 t1lib_doc.dvi: t1lib_doc.tex intro.tex getstart.tex xglyph.tex ut1lib.tex xinterface.tex internals.tex type1afm.tex
@@ -85,7 +85,7 @@ pdf: t1lib_doc.tex intro.tex getstart.tex xglyph.tex ut1lib.tex xinterface.tex i
 
 
 clean: dummy
-	$(RM) \#*\# *~ *.log *.aux *.bak *.dvi *.toc *.ilg *.idx *.ind *.out t1lib_doc.ps
+	$(RM) \#*\# *~ *.log *.aux *.bak *.dvi *.toc *.ilg *.idx *.ind *.out #t1lib_doc.ps
 
 
 install: dummy
