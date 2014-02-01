@@ -126,7 +126,7 @@ t1lib_target:
 
 
 libt1.la: $(TYPE1_OBJS) $(T1LIB_OBJS)
-	$(LIBTOOL) --mode=link \
+	$(LIBTOOL) --mode=link --tag=CC \
 		$(CC) $(LDFLAGS) -o $@ $(TYPE1_OBJS) $(T1LIB_OBJS) \
 	         -version-info @T1LIB_LT_CURRENT@:@T1LIB_LT_REVISION@:@T1LIB_LT_AGE@ \
 		 -lm -no-undefined -rpath $(libdir)
@@ -134,7 +134,7 @@ libt1.la: $(TYPE1_OBJS) $(T1LIB_OBJS)
 
 
 libt1x.la: $(T1LIBX_OBJS)
-	$(LIBTOOL) --mode=link \
+	$(LIBTOOL) --mode=link --tag=CC \
 		$(CC) $(LDFLAGS) -o $@ $(T1LIBX_OBJS) \
 	         -version-info @T1LIB_LT_CURRENT@:@T1LIB_LT_REVISION@:@T1LIB_LT_AGE@ \
 	         libt1.la $(X_LIBS) $(XPM_LIB) $(XLIB)  -no-undefined -rpath $(libdir) 
