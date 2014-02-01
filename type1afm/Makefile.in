@@ -69,12 +69,12 @@ T1LIB =  ../lib/libt1.la
 all: type1afm
 
 type1afm: $(OBJS) ../lib/t1lib.h
-	$(LIBTOOL) --mode=link \
+	$(LIBTOOL) --mode=link --tag=CC \
 		$(CC) -o type1afm $(LDFLAGS) $(OBJS) $(T1LIB) $(LDLIBS)
 
 .SUFFIXES: .lo
 .c.lo:
-	$(LIBTOOL) --mode=compile \
+	$(LIBTOOL) --mode=compile --tag=CC \
 		$(CC) -c $(CPPFLAGS) $(CFLAGS) $<
 
 .PHONY: clean

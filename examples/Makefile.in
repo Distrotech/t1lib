@@ -74,22 +74,22 @@ T1LIB =  ../lib/libt1.la
 
 .SUFFIXES: .lo
 .c.lo:
-	$(LIBTOOL) --mode=compile \
+	$(LIBTOOL) --mode=compile --tag=CC \
 		$(CC) $(INCDIR) -c $(CPPFLAGS) $(CFLAGS) $<
 
 all: $(TARGET1) $(TARGET2) 
 
 
 $(TARGET1): $(OBJS1) ../lib/t1lib.h
-	$(LIBTOOL) --mode=link \
+	$(LIBTOOL) --mode=link --tag=CC \
 		$(CC) -o $(TARGET1) $(LDFLAGS) $(OBJS1) $(T1LIB) $(LDLIBS)
 
 $(TARGET2): $(OBJS2) ../lib/t1lib.h
-	$(LIBTOOL) --mode=link \
+	$(LIBTOOL) --mode=link --tag=CC \
 		$(CC) -o $(TARGET2) $(LDFLAGS) $(OBJS2) $(T1LIB) $(LDLIBS)
 
 .c.o:
-	$(LIBTOOL) --mode=compile \
+	$(LIBTOOL) --mode=compile --tag=CC \
 		$(CC) $(INCDIR) -c $(CPPFLAGS) $(CFLAGS) $?
 
 .PHONY: clean

@@ -72,13 +72,13 @@ all: xglyph
 
 
 xglyph: $(OBJS) $(T1LIBX) $(T1LIB)
-	$(LIBTOOL) --mode=link \
+	$(LIBTOOL) --mode=link --tag=CC \
 		$(CC) -o xglyph $(LDFLAGS) $(OBJS) $(T1LIBX) $(T1LIB) \
 			        $(X_LIBS) $(XAWLIB) $(XLIB) $(LDLIBS)
 
 .SUFFIXES: .lo
 .c.lo:
-	$(LIBTOOL) --mode=compile \
+	$(LIBTOOL) --mode=compile --tag=CC \
 		$(CC) -c $(CPPFLAGS) $(CFLAGS) $<
 
 
